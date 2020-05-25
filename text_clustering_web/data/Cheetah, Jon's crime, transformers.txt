@@ -1,0 +1,9 @@
+A cheetah is running behind its prey
+A cheetah chases prey on across a field
+A tiger ran after the deer
+John did not commit the crime
+John Doe did not commit the crime
+The crime that John commited was hideously ghastly and beyond description by words
+Transformer based models have become popular in Natural language processing
+BERT is an attention based model that has replaced RNNs in many tasks
+Word2vec was one of the early unsupervised models to learn distributed representations for words

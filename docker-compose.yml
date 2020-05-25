@@ -1,0 +1,41 @@
+version: "3.7"
+
+services:
+    text-algorithm:
+        build:
+            context: ./semantic-clustering
+        image: text-algorithm:latest
+        environment:
+            FLASK_APP: webapp.py
+            FLASK_ENV: development
+            FLASK_DEBUG: 0
+        ports:
+            - "5000:5000"
+
+    text-api:
+        build:
+            context: ./TextClustering
+        image: text-api:latest
+        environment:
+            "AppSettings:AlgorithmUrl": http://host.docker.internal:5000/
+        ports:
+            - "4000:80"
+        network_mode: bridge
+        depends_on:
+            - text-algorithm
+            
+    text-ui:
+        build:
+            context: ./text_clustering_web
+        image: text-ui:latest
+        environment:
+            CHOKIDAR_USEPOLLING: "true"
+            REACT_APP_BACKEND_URL: http://localhost:4000/
+        volumes:
+            - "./text_clustering_web:/app"
+            - "/app/node_modules"
+        ports:
+            - "3000:3000"
+        depends_on:
+            - text-api
+            - text-algorithm 

@@ -1,0 +1,2 @@
+dotnet ef --startup-project ../TextClustering.Web/ migrations remove && dotnet ef --startup-project ../TextClustering.Web/ migrations add Initial && dotnet ef migrations script --idempotent -s ../TextClustering.Web/ -o db.sql
+pause

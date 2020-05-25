@@ -1,0 +1,96 @@
+export const cluster = async texts => {
+    const serverResponse = new Promise((resolve, reject) => {
+        return setTimeout(resolve, 5000, test);
+    });
+    const obj = await serverResponse;
+    return obj.clusters.length;
+};
+
+const test = [
+    {
+       "topicTokens":[
+          [
+             "my",
+             "with",
+             "he",
+             "to",
+             "your"
+          ],
+          [
+             "android",
+             "phone",
+             "cellphone",
+             "cell"
+          ]
+       ],
+       "sentenceKeys":[
+          "5a9a",
+          "3a58",
+          "b141",
+          "2fd8",
+          "2b1d",
+          "b597",
+          "61c0"
+       ]
+    },
+    {
+       "topicTokens":[
+          [
+             "man"
+          ],
+          [
+             "bread",
+             "food",
+             "eating",
+             "pasta"
+          ]
+       ],
+       "sentenceKeys":[
+          "aafb",
+          "c5c0",
+          "3f4d"
+       ]
+    },
+    {
+       "topicTokens":[
+          [
+             "astronauts",
+             "space",
+             "rockets",
+             "spacex",
+             "moon",
+             "floating"
+          ],
+          [
+             "musk",
+             "elon",
+             "reusable"
+          ]
+       ],
+       "sentenceKeys":[
+          "2b1d",
+          "2264",
+          "afc7",
+          "290a"
+       ]
+    },
+    {
+       "topicTokens":[
+          [
+             "prison",
+             "inmates",
+             "cell"
+          ],
+          [
+             "patients",
+             "blood",
+             "samples"
+          ]
+       ],
+       "sentenceKeys":[
+          "b141",
+          "61c0",
+          "2fd8"
+       ]
+    }
+ ]
